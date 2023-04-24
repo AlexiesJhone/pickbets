@@ -43,7 +43,7 @@ class ArenaController extends Controller
       ->latest()->paginate(10);
     }else {
       return arena::latest()->paginate(10);
-      // 'alex binago ko hasdsdasd
+      // 'alex binago ko hasdsdasdasdasd
     }
 
   }
