@@ -1,0 +1,109 @@
+<template>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-keyboard="false">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content" style="border:none">
+      <div class="modal-header bg-dark"><center>
+        <h5 class="modal-title text-warning font-weight-bold" id="staticBackdropLabel">Please be inform</h5></center>
+      </div>
+      <div class="modal-body text-center text-dark">
+        Your Account is Deactivated. Please Logout.
+      </div>
+      <div class="modal-footer" style="padding:0.5rem">
+        <button type="button" class="btn btn-sm btn-success col-md-12" @click.prevent='logout'>Understood</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+    export default {
+      props:['userx'],
+      data(){
+        return{
+          group:[],
+        }
+      },
+      methods:{
+        reload(){
+	document.getElementById('logout-form').submit();
+                  this.$router.push("/login")
+          window.location.reload();
+        },
+        cashout(){
+          $('#cashout').modal('show');
+        },
+        logout(){
+          if (this.userx.role==4) {
+            if (this.userx.cash>=100) {
+              $('#cashout2').modal('show');
+              location.reload();
+            }else {
+              axios.post('/logout').then(response => {
+                document.getElementById('logout-form').submit();
+                this.$router.push("/login")
+
+              }).catch(error => {
+                location.reload();
+              });
+            }
+          }else {
+            axios.post('/logout').then(response => {
+              document.getElementById('logout-form').submit();
+              this.$router.push("/login")
+
+            }).catch(error => {
+              location.reload();
+            });
+          }
+        },
+        getmygroup(){
+          axios.get('/pick20/getmygroup').then(response=>{
+            this.group = response.data;
+            if (this.group.active==2) {
+              if (this.userx.cash>=100) {
+                $('#cashout2').modal('show');
+              }else {
+                $('.modal').modal('hide');
+                $('#staticBackdrop').modal('show');
+                // $('.modal').modal('hide');
+                // $('#staticBackdrop').modal('show');
+              }
+            }
+          })
+        }
+      },
+        mounted() {
+          this.getmygroup();
+          if (this.userx.active==2) {
+
+              if (this.userx.cash>=100) {
+                $('#cashout2').modal('show');
+              }else {
+                $('#staticBackdrop').modal('show');
+              }
+          }
+          Echo.private('session')
+          .listen('usersession',(event)=>{
+            if (event.user.id===this.userx.id||event.user.id===this.userx.group_id) {
+              if (event.user.active===2) {
+                $('#cashin2').modal('hide');
+                $('#staticBackdrop').modal('show');
+              }
+              else {
+                window.location.reload();
+              }
+                  // console.log(event.user)
+              // $('#staticBackdrop').modal('show')
+              // Swal.fire(
+              //   'Please be inform',
+              //   'Other devices uses this account. you will be logout.',
+              //   'warning'
+              // );
+            }
+            console.log(event.user.group_id);
+          });
+        }
+    }
+</script>

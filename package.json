@@ -1,0 +1,48 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.21.1",
+        "bootstrap": "^4.6.0",
+        "jquery": "^3.6",
+        "laravel-echo": "^1.11.0",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.16.1",
+        "postcss": "^8.1.14",
+        "pusher-js": "^7.0.3",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "vue": "^2.6.12",
+        "vue-loader": "^15.9.7",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@chenfengyuan/vue-barcode": "^1.0.1",
+        "apexcharts": "^3.27.2",
+        "i": "^0.3.6",
+        "jw-vue-pagination": "^1.0.3",
+        "laravel-vue-pagination": "^2.3.1",
+        "moment": "^2.29.1",
+        "nouislider": "^15.7.0",
+        "npm": "^7.19.1",
+        "sweetalert2": "^11.0.18",
+        "v-calendar": "^2.3.0",
+        "vform": "^1.0.1",
+        "vue-apexcharts": "^1.6.1",
+        "vue-html-to-paper": "^1.4.3",
+        "vue-json-excel": "^0.3.0",
+        "vue-select": "^3.11.2",
+        "vue-spinners": "^1.0.2",
+        "vuejs-title": "^1.0.16"
+    }
+}

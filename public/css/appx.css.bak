@@ -1,0 +1,110 @@
+html{
+  background:  #0F2027;  /* fallback for old browsers */
+}
+body{
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh
+}
+.card,.table, .card-header{
+  border: none !important;
+}
+
+.modalb{
+  border:none;
+}
+.hidethis{
+  visibility: hidden; position:absolute;
+}
+/* .spinner[data-v-ae580a66]{
+  margin: 30px !important;
+} */
+.active{
+  background-color: #ffed4a;
+    border-radius: 10px;
+    color:#343a40 !important;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: black !important;
+    background-color: white;
+    border-color: white;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: white;
+    background-color: #343a40;
+    border: #343a40;
+}
+.page-link:hover {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: yellow;
+    background-color: #343a40;
+    border: #343a40;
+}
+.page-item.disabled .page-link {
+    color: #D3D3D3;
+    pointer-events: none;
+    cursor: auto;
+    background-color:  #343a40;
+    border-color:  #343a40;
+}
+#overlay {
+position: fixed; /* Sit on top of the page content */
+display: visible; /* Hidden by default */
+width: 100%; /* Full width (cover the whole page) */
+height: 100%; /* Full height (cover the whole page) */
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+z-index: 9999999; /* Specify a stack order in case you're using a different order for other elements */
+cursor: pointer; /* Add a pointer on hover */
+}
+.spinner>div[data-v-ae580a66] {
+    background-color: white !important;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+.spinner[data-v-ae580a66] {
+    margin: 100px auto;
+    width: 50px;
+    height: 100px;
+    text-align: center;
+    font-size: 17px;
+    position: absolute;
+    top: 21%;
+    left: 0;
+    right: 0;
+}
+.centerthis{
+    position: absolute;
+    top: 52%;
+    left: 0;
+    right: 0;
+}
+.dropdown-item:hover {
+    color: white !important;
+    background-color: #343a40;
+}
+.dropdown-item {
+    color: #ffed4a;
+    /* background-color: #e7e7e7; */
+}
+.cardlogin{
+  border-top-left-radius:20%;
+  border-top-right-radius:20%;
+}
