@@ -4131,7 +4131,7 @@ class BetController extends Controller
             $checkif2draws = $checkif2draws + 1;
           }elseif ($getnumber == 1) {
             $selections = array('meron'=>true,'wala'=>false,'draw'=>false,);
-            $bet = 'M';
+            $bet = 'R';
           }elseif ($getnumber == 2) {
             $selections = array('meron'=>false,'wala'=>true,'draw'=>false,);
             $bet = 'w';
@@ -4173,7 +4173,7 @@ class BetController extends Controller
             $checkif2draws = $checkif2draws + 1;
           }elseif ($getnumber == 1) {
             $selections = array('meron'=>true,'wala'=>false,'draw'=>false,);
-            $bet = 'M';
+            $bet = 'R';
           }elseif ($getnumber == 2) {
             $selections = array('meron'=>false,'wala'=>true,'draw'=>false,);
             $bet = 'w';
@@ -4215,7 +4215,7 @@ class BetController extends Controller
             $checkif2draws = $checkif2draws + 1;
           }elseif ($getnumber == 1) {
             $selections = array('meron'=>true,'wala'=>false,'draw'=>false,);
-            $bet = 'M';
+            $bet = 'R';
           }elseif ($getnumber == 2) {
             $selections = array('meron'=>false,'wala'=>true,'draw'=>false,);
             $bet = 'w';
@@ -4257,7 +4257,7 @@ class BetController extends Controller
             $checkif2draws = $checkif2draws + 1;
           }elseif ($getnumber == 1) {
             $selections = array('meron'=>true,'wala'=>false,'draw'=>false,);
-            $bet = 'M';
+            $bet = 'R';
           }elseif ($getnumber == 2) {
             $selections = array('meron'=>false,'wala'=>true,'draw'=>false,);
             $bet = 'w';
@@ -4299,7 +4299,7 @@ class BetController extends Controller
             $checkif2draws = $checkif2draws + 1;
           }elseif ($getnumber == 1) {
             $selections = array('meron'=>true,'wala'=>false,'draw'=>false,);
-            $bet = 'M';
+            $bet = 'R';
           }elseif ($getnumber == 2) {
             $selections = array('meron'=>false,'wala'=>true,'draw'=>false,);
             $bet = 'w';

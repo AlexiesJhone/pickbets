@@ -1800,24 +1800,6 @@ public function eventgetgroupreport(Request $req)
     ->withSum(['past_expertbet as totalpick2' => function ($query) use ($arrays) {
     $query->whereIn('event_id',$arrays)->where('turn',2)->where('winner','!=',4);;
   }],'amount')
-    ->withSum(['past_expertbet as totalpick3' => function ($query) use ($arrays) {
-    $query->whereIn('event_id',$arrays)->where('turn',3)->where('winner','!=',4);;
-  }],'amount')
-    ->withSum(['past_expertbet as totalpick4' => function ($query) use ($arrays) {
-    $query->whereIn('event_id',$arrays)->where('turn',4)->where('winner','!=',4);;
-  }],'amount')
-    ->withSum(['past_expertbet as totalpick5' => function ($query) use ($arrays) {
-    $query->whereIn('event_id',$arrays)->where('turn',5)->where('winner','!=',4);;
-  }],'amount')
-    ->withSum(['past_expertbet as totalpick6' => function ($query) use ($arrays) {
-    $query->whereIn('event_id',$arrays)->where('turn',6)->where('winner','!=',4);;
-  }],'amount')
-    ->withSum(['past_expertbet as totalpick8' => function ($query) use ($arrays) {
-    $query->whereIn('event_id',$arrays)->where('turn',8)->where('winner','!=',4);;
-  }],'amount')
-    ->withSum(['past_expertbet as totalpick14' => function ($query) use ($arrays) {
-    $query->whereIn('event_id',$arrays)->where('turn',14)->where('winner','!=',4);;
-  }],'amount')
     ->paginate(10);
 
 
@@ -4674,7 +4656,7 @@ public function eventgetgroupreport(Request $req)
     if ($geteventpick->pick==20) {
       $rake = $control->rake / 100;
     }
-    if ($geteventpick->pick==2||$geteventpick->pick==3||$geteventpick->pick==4||$geteventpick->pick==5||$geteventpick->pick==6) {
+    if ($geteventpick->pick==2||$geteventpick->pick==3||$geteventpick->pick==4||$geteventpick->pick==5||$geteventpick->pick==6||$geteventpick->pick==8||$geteventpick->pick==14) {
       $rake = $control->rakepick2 / 100;
     }
     $sql = '`barcode`,`startingfight`,`bet`,`name`,(a.id) AS id,`role`,`amount`,`winner`,`result`,`claimed`,`wins`,(a.updated_at) AS updated_at,(a.created_at) AS created_at,`username`,(a.amount * ?) AS income';

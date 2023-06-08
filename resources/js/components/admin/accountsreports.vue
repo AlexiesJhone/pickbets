@@ -182,7 +182,7 @@
                             <th class="font-weight-bold">Teller/Mobile</th>
                             <th class="font-weight-bold">Role</th>
                             <th class="font-weight-bold">Bet Total</th>
-                            <th class="font-weight-bold">Rake</th>
+                            <!-- <th class="font-weight-bold">Rake</th> -->
                             <th class="font-weight-bold">Payout Paid</th>
                             <th class="font-weight-bold">Unclaimed</th>
                           </tr>
@@ -193,7 +193,7 @@
                             <td> <a v-if="t.role===1">Admin</a><a v-if="t.role===9">Teller</a><a v-if="t.role===3">Mobile Player</a><a v-if="t.role===4">Cashier</a><a v-if="t.role===5">Declarator</a>
                               <a v-if="t.role===6">CSR</a><a v-if="t.role===7">Boss/Manager</a><a v-if="t.role===2">Supervisor</a><a v-if="t.role===8">Confirm Declarator</a></td>
                             <td>{{Number(t.totalbets).toLocaleString('en-PH', {style:'currency', currency:'PHP'})}}</td>
-                            <td>{{Number((Number(t.totalpick20)*0.10)+(Number(t.totalpick2)*0.05)).toLocaleString('en-PH', {style:'currency', currency:'PHP'})}}</td>
+                            <!-- <td>{{Number((Number(t.totalpick20)*0.10)+(Number(t.totalpick2)*0.05)).toLocaleString('en-PH', {style:'currency', currency:'PHP'})}}</td> -->
                             <td>{{Number(t.totalpayoutpaid).toLocaleString('en-PH', {style:'currency', currency:'PHP'})}}</td>
                             <td>{{Number(t.totalunclaimed).toLocaleString('en-PH', {style:'currency', currency:'PHP'})}}</td>
                           </tr>
@@ -1180,7 +1180,7 @@
              'Teller/Mobile': 'username',
              'Role': 'role',
              'Bet Total': 'totalbets',
-             'Rake': 'income',
+             // 'Rake': 'income',
              'Payout Paid': 'totalpayoutpaid',
              'Unclaimed': 'totalunclaimed',
            },

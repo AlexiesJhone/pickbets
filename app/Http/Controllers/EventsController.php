@@ -1420,7 +1420,7 @@ return error;
             $query->where('claim', 1);
         },
         ])->get();
-        $checktellerandcashier = User::whereIn('role',[0,4])->sum('cash');
+        $checktellerandcashier = User::whereIn('role',[9,4])->sum('cash');
         // return $checktellerandcashier;
         if ($event->sum('expertbet_count')) {
           return ['error'=>'You cannot close the event because there are still pending bets'];
@@ -3919,7 +3919,7 @@ return error;
           $neweventpick5->end14 = $req['end14'];
           $neweventpick5->control = 'Closed';
           $neweventpick5->status = 0;
-          $i = $i+6-1;
+          $i = $i+14-1;
           $neweventpick5->control = 'Closed';
           $neweventpick5->pick = 14;
           if ($req['pick2']) {

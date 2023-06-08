@@ -311,24 +311,87 @@ class ResultsController extends Controller
           $this->dispatch(new grading($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
           if ($get1->pick2) {
             $this->dispatch(new gradingpick2($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly2 = expertbet::whereIn('event_id',$array)->where('turn',2)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly2) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',2)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',2)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
           if ($get1->pick3) {
             $this->dispatch(new gradingpick3($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly3 = expertbet::whereIn('event_id',$array)->where('turn',3)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly3) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',3)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',3)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
           if ($get1->pick4) {
             $this->dispatch(new gradingpick4($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly4 = expertbet::whereIn('event_id',$array)->where('turn',4)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly4) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',4)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',4)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
           if ($get1->pick5) {
             $this->dispatch(new gradingpick5($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly5 = expertbet::whereIn('event_id',$array)->where('turn',5)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly5) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',5)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',5)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
           if ($get1->pick6) {
             $this->dispatch(new gradingpick6($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly6 = expertbet::whereIn('event_id',$array)->where('turn',6)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly6) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',6)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',6)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
           if ($get1->pick8) {
             $this->dispatch(new gradingpick8($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly8 = expertbet::whereIn('event_id',$array)->where('turn',8)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly8) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',8)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',8)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
           if ($get1->pick14) {
             $this->dispatch(new gradingpick14($result,$eventid,$fn,$c1,$c2,auth()->user()->name,$getonebetonly->startingfight,$array));
+            $getonebetonly14 = expertbet::whereIn('event_id',$array)->where('turn',14)->where('startingfight',$getonebetonly->startingfight)->first();
+            if (!$getonebetonly14) {
+              $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->where('pick',14)->update([
+                'control'=> 'Finished',
+              ]);
+              $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->where('pick',14)->update([
+                'claim'=> 2,
+              ]);
+            }
           }
       }else{
         // DB::transaction(function () use($fightnumber,$results,$event_id,$confirm1,$confirm2,$data,$name){})
@@ -336,6 +399,9 @@ class ResultsController extends Controller
         $getactiveevent = Event::where('status',1)->first();
         $remove = Event::where('startingfight',$starting)->whereIn('id',$array)->update([
           'control'=> 'Finished',
+        ]);
+        $remove2 = Potmoney::where('startingfight',$starting)->whereIn('event_id',$array)->update([
+          'claim'=> 2,
         ]);
         $total = $getactiveevent->currentfight + 1;
         if ($remove) {
